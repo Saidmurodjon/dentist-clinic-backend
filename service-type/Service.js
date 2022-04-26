@@ -53,7 +53,7 @@ async function UpdateService(req, res) {
 async function DeleteService(req, res) {
   try {
     let userId = req.params.id;
-    let result = await Service.findByIdAndDelete(userId);
+    let result = await ServiceModel.findByIdAndDelete(userId);
 
     return res.status(200).send(result);
   } catch (err) {

@@ -61,8 +61,19 @@ async function UpdatePatient(req, res) {
     res.status(404).send(err);
   }
 }
+async function DeletePatient(req, res) {
+  try {
+    let userId = req.params.id;
+    let result = await PatientModel.findByIdAndDelete(userId);
+
+    return res.status(200).send(result);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+}
 module.exports = {
   GetPatient,
   AddPatient,
   UpdatePatient,
+  DeletePatient
 };

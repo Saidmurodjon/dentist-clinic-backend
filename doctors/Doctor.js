@@ -2,13 +2,30 @@ const DoctorModel = require("./DoctorModel");
 
 async function GetDoctor(req, res) {
   try {
-    const pupils = await DoctorModel.find({});
-    return res.status(200).send(pupils);
+    const doctor = await DoctorModel.find({});
+    return res.status(200).send(doctor);
   } catch (err) {
     res.status(400).send(err);
   }
 }
 
+// async function CheckDoctor(req, res) {
+//   try {
+//     const doctor = await DoctorModel.find([]);
+//  const foo=[doctor]
+//     console.log( typeof doctor);
+//     console.log(err);
+//       for (let i = 0; i < doctor.length; i++) {
+//         if (doctor[i].login===req.body.login && doctor[i].password===req.body.password) {
+//           return res.status(200).send(doctor[i]);
+//         }
+        
+//       }
+
+//   } catch (err) {
+//     res.status(400).send(err);
+//   }
+// }
 async function AddDoctor(req, res) {
   try {
     const category = new DoctorModel({
@@ -61,7 +78,7 @@ async function UpdateDoctor(req, res) {
 async function DeleteDoctor(req, res) {
   try {
     let userId = req.params.id;
-    let result = await Doctor.findByIdAndDelete(userId);
+    let result = await DoctorModel.findByIdAndDelete(userId);
 
     return res.status(200).send(result);
   } catch (err) {
@@ -74,4 +91,5 @@ module.exports = {
   AddDoctor,
   UpdateDoctor,
   DeleteDoctor,
+  // CheckDoctor,
 };
