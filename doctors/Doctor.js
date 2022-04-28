@@ -19,7 +19,7 @@ async function GetDoctor(req, res) {
 //         if (doctor[i].login===req.body.login && doctor[i].password===req.body.password) {
 //           return res.status(200).send(doctor[i]);
 //         }
-        
+
 //       }
 
 //   } catch (err) {
@@ -36,6 +36,8 @@ async function AddDoctor(req, res) {
       brithday: req.body.brithday,
       login: req.body.login,
       password: req.body.password,
+      age: req.body.age,
+      type: req.body.type,
     });
 
     category.save((err, category) => {
@@ -66,6 +68,8 @@ async function UpdateDoctor(req, res) {
       brithday: req.body.brithday,
       login: req.body.login,
       password: req.body.password,
+      age: req.body.age,
+      type: req.body.type,
     };
     let result = await DoctorModel.findByIdAndUpdate(userId, category);
 

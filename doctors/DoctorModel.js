@@ -7,6 +7,8 @@ const DoctorSchema = mongoose.Schema({
   brithday: String,
   login:String,
   password:String,
+  age:String,
+  type:String,
   role: {
     type: String,
     default: "doctor",
