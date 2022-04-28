@@ -17,7 +17,7 @@ async function AddPatient(req, res) {
       address: req.body.address,
       age: req.body.age,
       service: req.body.service,
-      signature: req.body.paymet,
+      signature: req.body.signature,
       type: req.body.type,
       date: req.body.date,
       doctorName: req.body.doctorName,
@@ -50,7 +50,7 @@ async function UpdatePatient(req, res) {
       address: req.body.address,
       age: req.body.age,
       service: req.body.service,
-      signature: req.body.paymet,
+      signature: req.body.signature,
       type: req.body.type,
       date: req.body.date,
     };
