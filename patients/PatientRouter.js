@@ -4,6 +4,7 @@ const router = express.Router();
 const Patient = require("./Patient");
 router.route("/").get(Patient.GetPatient);
 router.route("/").post(Patient.AddPatient);
+router.route("/day").post(Patient.PatientDay);
 router.route("/:id").put(Patient.UpdatePatient);
 router.route("/:id").delete(Patient.DeletePatient);
 

@@ -5,15 +5,18 @@ const PatientSchema = mongoose.Schema({
   tel: String,
   address: String,
   age: String,
-  date: String,
+  total:Number,
   service: [],
   signature: String,
   type:String,
   doctorName:String,
+  doctorID:String,
+  doctorPay:Boolean,
   role: {
     type: String,
     default: "patient",
   },
+  date: String,
 });
 const PatientModel = mongoose.model("PatientModel", PatientSchema);
 module.exports = PatientModel;
